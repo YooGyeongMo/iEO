@@ -116,7 +116,8 @@
 		D5409C2D2DB1D6F800B6FF8E /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				D5409C6B2DB1F95700B6FF8E /* IntroViewController.swift */,
+				D5409D292DB443D400B6FF8E /* View */,
+				D5409D2A2DB443DD00B6FF8E /* ViewModel */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -148,9 +149,9 @@
 			children = (
 				D5409C2F2DB1D6F800B6FF8E /* Launch */,
 				D5409C2D2DB1D6F800B6FF8E /* Intro */,
-				D5409C2C2DB1D6F800B6FF8E /* Home */,
 				D5409C302DB1D6F800B6FF8E /* Login */,
 				D5409C312DB1D6F800B6FF8E /* Onboading */,
+				D5409C2C2DB1D6F800B6FF8E /* Home */,
 				D5409C5E2DB1D8C400B6FF8E /* Network */,
 			);
 			path = Presentation;
@@ -246,6 +247,21 @@
 				D5409D272DB429A400B6FF8E /* RadiusSquare.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D5409D292DB443D400B6FF8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5409C6B2DB1F95700B6FF8E /* IntroViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5409D2A2DB443DD00B6FF8E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D57501442DB11280002C1135 = {
