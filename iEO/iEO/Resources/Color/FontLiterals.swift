@@ -33,9 +33,7 @@ extension UIFont {
     // MARK: - 사용법
 
     static var h1: UIFont { font(.semiBold, ofSize: 20) }
-    static var h2: UIFont { font(.extraBold, ofSize: 30) }
+    static var launchLabel: UIFont { font(.medium, ofSize: 20) }
     static var body: UIFont { font(.regular, ofSize: 14) }
     static var caption: UIFont { font(.light, ofSize: 12) }
-    static var intro: UIFont {font(.medium, ofSize: 25)}
-    static var launchLabel: UIFont { font( .medium, ofSize: 20)}
 }

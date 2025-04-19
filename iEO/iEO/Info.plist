@@ -19,5 +19,7 @@
 			</array>
 		</dict>
 	</dict>
+    <key>UILaunchStoryboardName</key>
+    <string>NewLaunchScreen</string>    
 </dict>
 </plist>
