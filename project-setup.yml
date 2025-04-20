@@ -1,0 +1,19 @@
+## 🧩 이슈 개요
+프로젝트의 기본 화면 흐름 구성 (런치 → 인트로) 및 폴더(그룹) 구조 정리 작업입니다.  
+MVVM, Coordinator 패턴 적용을 포함하며, 이후 레지스터/로그인 흐름 연계를 위한 기반 구조를 마련합니다.
+
+### 📚 할 일 목록
+- [X] 프로젝트 구조 설계 (`Presentation`, `Global`, `Resources`, `Network`, `Common` 등 그룹핑)
+- [X] Coordinator 패턴 기반 `AppCoordinator` 생성 및 연결
+- [X] `LaunchViewController` → `IntroViewController` 화면 전환 구현 (CATransition 포함)
+- [X] 네비게이션 흐름 관리를 위한 UINavigationController 구조 설정
+- [X] MVVM 패턴 기본 구조 작성 (필요 시)
+- [X] Preview 및 Extension 세팅 (`.toPreview()`, `UIFont` 등)
+- [X] `.gitignore`, 폰트, 앱 컬러 등 리소스 추가 및 그룹 정리
+
+### 💬 세부 설명 or 참고사항
+
+---
+
+📎 참고 키워드  
+`#MVVM` `#Coordinator` `#LaunchFlow` `#IntroUI` `#UIKit` `#파일구조` `#앱초기설계`
