@@ -14,6 +14,9 @@ class SignUpAuthViewController: UIViewController {
     weak var coordinator: AppCoordinator?
     private let viewModel = SignUpAuthViewModel()
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
     //MARK: - UI
     
     private let ifSendAuthLabel: UILabel = {
@@ -150,75 +153,95 @@ class SignUpAuthViewController: UIViewController {
         configureInitialHiddenState()
         bindViewModel()
         configureActions()
+        setupKeyboardObserver()
         title = "러너 인증"
     }
     
     
     private func setUpViews() {
-        view.backgroundColor = .accent
-        view.addSubview(mailImageView)
-        view.addSubview(descriptionLabel)
         
-        view.addSubview(emailLabel)
-        view.addSubview(emailTextField)
+        // MARK: - 스크롤 뷰
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         
-        view.addSubview(ifSendAuthLabel)
-        view.addSubview(ifSendAuthTimeLabel)
         
-        view.addSubview(ifSendAuthInvaildLabel)
+        contentView.addSubview(mailImageView)
+        contentView.addSubview(descriptionLabel)
         
-        view.addSubview(ifSendAuthNumberLabel)
-        view.addSubview(ifSendAuthNumberTextField)
+        contentView.addSubview(emailLabel)
+        contentView.addSubview(emailTextField)
         
-        view.addSubview(sendAuthButton)
-        view.addSubview(reSendAuthButton)
+        contentView.addSubview(ifSendAuthInvaildLabel)
         
+        contentView.addSubview(ifSendAuthLabel)
+        contentView.addSubview(ifSendAuthTimeLabel)
+        
+        contentView.addSubview(ifSendAuthNumberLabel)
+        contentView.addSubview(ifSendAuthNumberTextField)
+        
+        contentView.addSubview(sendAuthButton)
+        contentView.addSubview(reSendAuthButton)
         
         NSLayoutConstraint.activate([
             
-            ifSendAuthLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            ifSendAuthLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            ifSendAuthTimeLabel.topAnchor.constraint(equalTo: ifSendAuthLabel.bottomAnchor,constant: 10),
-            ifSendAuthTimeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            mailImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            contentView.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.heightAnchor),
+            
+            ifSendAuthLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ifSendAuthLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            
+            ifSendAuthTimeLabel.topAnchor.constraint(equalTo: ifSendAuthLabel.bottomAnchor, constant: 10),
+            ifSendAuthTimeLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            
+            mailImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            mailImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             mailImageView.widthAnchor.constraint(equalToConstant: 390),
             mailImageView.heightAnchor.constraint(equalToConstant: 390),
             
-            descriptionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 290),
-            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 290),
+            descriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             ifSendAuthInvaildLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 15),
-            ifSendAuthInvaildLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ifSendAuthInvaildLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            emailLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant:16),
-            emailLabel.topAnchor.constraint(equalTo:descriptionLabel.bottomAnchor, constant:70),
+            emailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            emailLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 70),
             
-            emailTextField.leadingAnchor.constraint(equalTo:emailLabel.leadingAnchor),
-            emailTextField.topAnchor.constraint(equalTo:emailLabel.bottomAnchor, constant:15),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            emailTextField.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 15),
+            emailTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
             ifSendAuthNumberLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 15),
             ifSendAuthNumberLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
             
             ifSendAuthNumberTextField.topAnchor.constraint(equalTo: ifSendAuthNumberLabel.bottomAnchor, constant: 15),
-            ifSendAuthNumberTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            ifSendAuthNumberTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            ifSendAuthNumberTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            ifSendAuthNumberTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             ifSendAuthNumberTextField.heightAnchor.constraint(equalToConstant: 50),
             
             sendAuthButton.topAnchor.constraint(equalTo: ifSendAuthNumberTextField.bottomAnchor, constant: 30),
-            sendAuthButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90),
-            sendAuthButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -90),
+            sendAuthButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 90),
+            sendAuthButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -90),
             sendAuthButton.heightAnchor.constraint(equalToConstant: 50),
             
-            reSendAuthButton.topAnchor.constraint(equalTo:sendAuthButton.bottomAnchor, constant: 15),
-            reSendAuthButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            reSendAuthButton.topAnchor.constraint(equalTo: sendAuthButton.bottomAnchor, constant: 15),
+            reSendAuthButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
-
+    
     private func configureInitialHiddenState() {
         [ifSendAuthLabel, ifSendAuthTimeLabel, ifSendAuthInvaildLabel,
          ifSendAuthNumberLabel, ifSendAuthNumberTextField, reSendAuthButton].forEach {
@@ -267,6 +290,33 @@ class SignUpAuthViewController: UIViewController {
     
     private func showInvaildMessage() {
         ifSendAuthInvaildLabel.isHidden = false
+    }
+    
+    private func setupKeyboardObserver() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        let bottomInset = keyboardFrame.height
+        scrollView.contentInset.bottom = bottomInset
+        scrollView.verticalScrollIndicatorInsets.bottom = bottomInset
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentInset.bottom = 0
+        scrollView.verticalScrollIndicatorInsets.bottom = 0
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
