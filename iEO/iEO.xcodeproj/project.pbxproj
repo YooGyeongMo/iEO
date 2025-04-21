@@ -14,10 +14,8 @@
 		D527B70A2DB5D64E00F8A99E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D527B7092DB5D64E00F8A99E /* FirebaseFirestore */; };
 		D527B70C2DB5D64E00F8A99E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D527B70B2DB5D64E00F8A99E /* FirebaseMessaging */; };
 		D527B70E2DB5D91800F8A99E /* SignUpAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */; };
-		D527B7102DB5D9A000F8A99E /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */; };
 		D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */; };
 		D527B7142DB5DA1E00F8A99E /* SignUpAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */; };
-		D527B7162DB5DA3000F8A99E /* EmailVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */; };
 		D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */; };
 		D527B7222DB5E84200F8A99E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */; };
 		D527B7232DB5E84200F8A99E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71D2DB5E84200F8A99E /* Pretendard-Light.otf */; };
@@ -49,10 +47,8 @@
 /* Begin PBXFileReference section */
 		D527B7002DB5D29A00F8A99E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewController.swift; sourceTree = "<group>"; };
-		D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
 		D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewController.swift; sourceTree = "<group>"; };
 		D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewModel.swift; sourceTree = "<group>"; };
-		D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewModel.swift; sourceTree = "<group>"; };
 		D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewModel.swift; sourceTree = "<group>"; };
 		D527B7192DB5E84200F8A99E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		D527B71A2DB5E84200F8A99E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -123,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */,
-				D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */,
 				D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */,
 			);
 			path = View;
@@ -133,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */,
-				D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */,
 				D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */,
 			);
 			path = ViewModel;
@@ -491,12 +485,10 @@
 				D5409C4C2DB1D6F800B6FF8E /* ColorLiterals.swift in Sources */,
 				D5409C4D2DB1D6F800B6FF8E /* FontLiterals.swift in Sources */,
 				D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */,
-				D527B7162DB5DA3000F8A99E /* EmailVerificationViewModel.swift in Sources */,
 				D5409C4E2DB1D6F800B6FF8E /* AppDelegate.swift in Sources */,
 				D527B73B2DB6926C00F8A99E /* HomeViewController.swift in Sources */,
 				D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */,
 				D5409C4F2DB1D6F800B6FF8E /* SceneDelegate.swift in Sources */,
-				D527B7102DB5D9A000F8A99E /* EmailVerificationViewController.swift in Sources */,
 				D5409C692DB1F4D600B6FF8E /* UIViewControllerPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftUI
+
 
 class SignUpAuthViewController: UIViewController {
     
@@ -319,11 +319,4 @@ class SignUpAuthViewController: UIViewController {
         view.endEditing(true)
     }
     
-}
-
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-        SignUpAuthViewController().toPreview()
-    }
 }

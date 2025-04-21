@@ -5,7 +5,7 @@
 //  Created by Demian Yoo on 4/21/25.
 //
 
-import  UIKit
+import UIKit
 
 class UserInfoCheckViewController: UIViewController {
     
@@ -16,3 +16,4 @@ class UserInfoCheckViewController: UIViewController {
         
         }
 }
+
