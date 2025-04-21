@@ -38,4 +38,7 @@ extension UIFont {
     static var caption: UIFont { font(.light, ofSize: 12) }
     static var intro: UIFont {font(.medium, ofSize: 25)}
     static var launchLabel: UIFont { font( .medium, ofSize: 20)}
+    static var mediumLabel: UIFont { font( .medium, ofSize: 20)}
+    static var authLabel: UIFont {font (.semiBold, ofSize: 17)}
+    static var authTimeLabel: UIFont{font (.bold, ofSize:30)}
 }

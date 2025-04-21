@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SwiftUI
 
-
+// MARK: - 인트로 뷰컨트롤러 델리게이트 프로토콜 바인딩
 class IntroViewController: UIViewController {
     
     weak var coordinator: AppCoordinator?
@@ -70,11 +69,22 @@ class IntroViewController: UIViewController {
         setupViews()
         setConstraints()
         uiGesture()
+        
+        startButton.delegate = self // 델리게이트
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "이전"
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateImageFadeIn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     private func setupViews() {
@@ -100,7 +110,7 @@ class IntroViewController: UIViewController {
             subLabel2.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 10),
             subLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            subLabel3.topAnchor.constraint(equalTo: subLabel2.bottomAnchor, constant: 45),
+            subLabel3.topAnchor.constraint(equalTo: subLabel2.bottomAnchor, constant: 35),
             subLabel3.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -133,6 +143,7 @@ class IntroViewController: UIViewController {
         let backgroundTap = UITapGestureRecognizer(target: self, action: #selector(handleOutsideTap(_:)))
         backgroundTap.cancelsTouchesInView = false
         view.addGestureRecognizer(backgroundTap)
+        
     }
     
     @objc private func handleStartTap() {
@@ -179,9 +190,16 @@ class IntroViewController: UIViewController {
     }
 }
 
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-        IntroViewController().toPreview()
+
+// MARK: - RadiusSquareProtocol Delegate
+extension IntroViewController: RadiusSquareDelegate {
+    func onExistingRunnerTapped() {
+        // 기존 러너 화면으로 이동
+        coordinator?.goToLogin()
+    }
+    
+    func onNewRunnerTapped() {
+        // 새로운 러너 회원가입 화면으로 이동
+        coordinator?.goToAuth()
     }
 }

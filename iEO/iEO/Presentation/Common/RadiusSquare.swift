@@ -10,6 +10,7 @@ import UIKit
 class RadiusSquare: UIView {
     
     private var currentConstraints: [NSLayoutConstraint] = []
+    weak var delegate: RadiusSquareDelegate?  // 델리게이트
     
     private let label: UILabel = {
         let label = UILabel()
@@ -74,6 +75,15 @@ class RadiusSquare: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    @objc private func existingRunnerTapped() {
+        delegate?.onExistingRunnerTapped()
+    }
+    
+    @objc private func newRunnerTapped() {
+        delegate?.onNewRunnerTapped()
+    }
+    
     private func setupView() {
         backgroundColor = .accent
         layer.cornerRadius = 25
@@ -85,6 +95,20 @@ class RadiusSquare: UIView {
         subButtonView2.addSubview(subButtonLabel2)
         subButtonView.isHidden = true
         subButtonView2.isHidden = true
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(existingRunnerTapped))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(newRunnerTapped))
+        subButtonView.addGestureRecognizer(tap1)
+        subButtonView2.addGestureRecognizer(tap2)
+        
+        subButtonView.isUserInteractionEnabled = true
+        subButtonView2.isUserInteractionEnabled = true
+        
+        let existingTap = UITapGestureRecognizer(target: self, action: #selector(existingRunnerTapped))
+        subButtonView.addGestureRecognizer(existingTap)
+        
+        let newTap = UITapGestureRecognizer(target: self, action: #selector(newRunnerTapped))
+        subButtonView2.addGestureRecognizer(newTap)
     }
     
     func configure(for state: ButtonState) {

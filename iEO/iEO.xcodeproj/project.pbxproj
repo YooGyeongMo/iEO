@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D527B7012DB5D29A00F8A99E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D527B7002DB5D29A00F8A99E /* GoogleService-Info.plist */; };
+		D527B7042DB5D64E00F8A99E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D527B7032DB5D64E00F8A99E /* FirebaseAnalytics */; };
+		D527B7062DB5D64E00F8A99E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D527B7052DB5D64E00F8A99E /* FirebaseAuth */; };
+		D527B7082DB5D64E00F8A99E /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = D527B7072DB5D64E00F8A99E /* FirebaseCore */; };
+		D527B70A2DB5D64E00F8A99E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D527B7092DB5D64E00F8A99E /* FirebaseFirestore */; };
+		D527B70C2DB5D64E00F8A99E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D527B70B2DB5D64E00F8A99E /* FirebaseMessaging */; };
+		D527B70E2DB5D91800F8A99E /* SignUpAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */; };
+		D527B7102DB5D9A000F8A99E /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */; };
+		D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */; };
+		D527B7142DB5DA1E00F8A99E /* SignUpAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */; };
+		D527B7162DB5DA3000F8A99E /* EmailVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */; };
+		D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */; };
+		D527B7222DB5E84200F8A99E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */; };
+		D527B7232DB5E84200F8A99E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71D2DB5E84200F8A99E /* Pretendard-Light.otf */; };
+		D527B7242DB5E84200F8A99E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B7212DB5E84200F8A99E /* Pretendard-Thin.otf */; };
+		D527B7252DB5E84200F8A99E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71F2DB5E84200F8A99E /* Pretendard-Regular.otf */; };
+		D527B7262DB5E84200F8A99E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71E2DB5E84200F8A99E /* Pretendard-Medium.otf */; };
+		D527B7272DB5E84200F8A99E /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71C2DB5E84200F8A99E /* Pretendard-ExtraLight.otf */; };
+		D527B7282DB5E84200F8A99E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B7192DB5E84200F8A99E /* Pretendard-Black.otf */; };
+		D527B7292DB5E84200F8A99E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71A2DB5E84200F8A99E /* Pretendard-Bold.otf */; };
+		D527B72A2DB5E84200F8A99E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B7202DB5E84200F8A99E /* Pretendard-SemiBold.otf */; };
+		D527B72C2DB5EBE700F8A99E /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B72B2DB5EBA500F8A99E /* PaddedTextField.swift */; };
+		D527B7342DB6806C00F8A99E /* RadiusSqaureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7332DB6805D00F8A99E /* RadiusSqaureDelegate.swift */; };
+		D527B7362DB6845300F8A99E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7352DB6844400F8A99E /* LoginViewController.swift */; };
+		D527B73B2DB6926C00F8A99E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B73A2DB6926300F8A99E /* HomeViewController.swift */; };
 		D5409C492DB1D6F800B6FF8E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C292DB1D6F800B6FF8E /* AppCoordinator.swift */; };
 		D5409C4A2DB1D6F800B6FF8E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C2A2DB1D6F800B6FF8E /* Coordinator.swift */; };
 		D5409C4B2DB1D6F800B6FF8E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C2E2DB1D6F800B6FF8E /* LaunchViewController.swift */; };
@@ -14,15 +39,6 @@
 		D5409C4D2DB1D6F800B6FF8E /* FontLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C352DB1D6F800B6FF8E /* FontLiterals.swift */; };
 		D5409C4E2DB1D6F800B6FF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C442DB1D6F800B6FF8E /* AppDelegate.swift */; };
 		D5409C4F2DB1D6F800B6FF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C472DB1D6F800B6FF8E /* SceneDelegate.swift */; };
-		D5409C502DB1D6F800B6FF8E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C362DB1D6F800B6FF8E /* Pretendard-Black.otf */; };
-		D5409C512DB1D6F800B6FF8E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C372DB1D6F800B6FF8E /* Pretendard-Bold.otf */; };
-		D5409C522DB1D6F800B6FF8E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C382DB1D6F800B6FF8E /* Pretendard-ExtraBold.otf */; };
-		D5409C532DB1D6F800B6FF8E /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C392DB1D6F800B6FF8E /* Pretendard-ExtraLight.otf */; };
-		D5409C542DB1D6F800B6FF8E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C3A2DB1D6F800B6FF8E /* Pretendard-Light.otf */; };
-		D5409C552DB1D6F800B6FF8E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C3B2DB1D6F800B6FF8E /* Pretendard-Medium.otf */; };
-		D5409C562DB1D6F800B6FF8E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C3C2DB1D6F800B6FF8E /* Pretendard-Regular.otf */; };
-		D5409C572DB1D6F800B6FF8E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C3D2DB1D6F800B6FF8E /* Pretendard-SemiBold.otf */; };
-		D5409C582DB1D6F800B6FF8E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5409C3E2DB1D6F800B6FF8E /* Pretendard-Thin.otf */; };
 		D5409C592DB1D6F800B6FF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5409C402DB1D6F800B6FF8E /* Assets.xcassets */; };
 		D5409C692DB1F4D600B6FF8E /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C682DB1F4CA00B6FF8E /* UIViewControllerPreview.swift */; };
 		D5409C6C2DB1F95700B6FF8E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C6B2DB1F95700B6FF8E /* IntroViewController.swift */; };
@@ -31,20 +47,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D527B7002DB5D29A00F8A99E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewController.swift; sourceTree = "<group>"; };
+		D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
+		D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewController.swift; sourceTree = "<group>"; };
+		D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewModel.swift; sourceTree = "<group>"; };
+		D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewModel.swift; sourceTree = "<group>"; };
+		D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewModel.swift; sourceTree = "<group>"; };
+		D527B7192DB5E84200F8A99E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		D527B71A2DB5E84200F8A99E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		D527B71C2DB5E84200F8A99E /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		D527B71D2DB5E84200F8A99E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		D527B71E2DB5E84200F8A99E /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		D527B71F2DB5E84200F8A99E /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		D527B7202DB5E84200F8A99E /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		D527B7212DB5E84200F8A99E /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		D527B72B2DB5EBA500F8A99E /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		D527B7332DB6805D00F8A99E /* RadiusSqaureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusSqaureDelegate.swift; sourceTree = "<group>"; };
+		D527B7352DB6844400F8A99E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D527B73A2DB6926300F8A99E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D5409C292DB1D6F800B6FF8E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D5409C2A2DB1D6F800B6FF8E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D5409C2E2DB1D6F800B6FF8E /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		D5409C332DB1D6F800B6FF8E /* ColorLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiterals.swift; sourceTree = "<group>"; };
 		D5409C352DB1D6F800B6FF8E /* FontLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLiterals.swift; sourceTree = "<group>"; };
-		D5409C362DB1D6F800B6FF8E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
-		D5409C372DB1D6F800B6FF8E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
-		D5409C382DB1D6F800B6FF8E /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
-		D5409C392DB1D6F800B6FF8E /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
-		D5409C3A2DB1D6F800B6FF8E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
-		D5409C3B2DB1D6F800B6FF8E /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		D5409C3C2DB1D6F800B6FF8E /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
-		D5409C3D2DB1D6F800B6FF8E /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		D5409C3E2DB1D6F800B6FF8E /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		D5409C402DB1D6F800B6FF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5409C442DB1D6F800B6FF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5409C452DB1D6F800B6FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,12 +88,116 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D527B7042DB5D64E00F8A99E /* FirebaseAnalytics in Frameworks */,
+				D527B70A2DB5D64E00F8A99E /* FirebaseFirestore in Frameworks */,
+				D527B70C2DB5D64E00F8A99E /* FirebaseMessaging in Frameworks */,
+				D527B7082DB5D64E00F8A99E /* FirebaseCore in Frameworks */,
+				D527B7062DB5D64E00F8A99E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D527B6F82DB5CAFE00F8A99E /* NewLogin */ = {
+			isa = PBXGroup;
+			children = (
+				D527B6FD2DB5CB3100F8A99E /* Model */,
+				D527B6FB2DB5CB2800F8A99E /* View */,
+				D527B6FC2DB5CB2C00F8A99E /* ViewModel */,
+			);
+			path = NewLogin;
+			sourceTree = "<group>";
+		};
+		D527B6F92DB5CB1000F8A99E /* OriginLogin */ = {
+			isa = PBXGroup;
+			children = (
+				D527B72D2DB67FA800F8A99E /* Model */,
+				D527B7302DB67FBA00F8A99E /* View */,
+				D527B7312DB67FC300F8A99E /* ViewModel */,
+			);
+			path = OriginLogin;
+			sourceTree = "<group>";
+		};
+		D527B6FB2DB5CB2800F8A99E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */,
+				D527B70F2DB5D99200F8A99E /* EmailVerificationViewController.swift */,
+				D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D527B6FC2DB5CB2C00F8A99E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D527B7132DB5DA1300F8A99E /* SignUpAuthViewModel.swift */,
+				D527B7152DB5DA2700F8A99E /* EmailVerificationViewModel.swift */,
+				D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D527B6FD2DB5CB3100F8A99E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D527B72D2DB67FA800F8A99E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D527B7302DB67FBA00F8A99E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D527B7352DB6844400F8A99E /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D527B7312DB67FC300F8A99E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D527B7322DB6801D00F8A99E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D527B7332DB6805D00F8A99E /* RadiusSqaureDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		D527B7372DB6924400F8A99E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D527B7382DB6924C00F8A99E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D527B73A2DB6926300F8A99E /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D527B7392DB6925400F8A99E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D5409C242DB1D6F800B6FF8E /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +240,9 @@
 		D5409C2C2DB1D6F800B6FF8E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D527B7372DB6924400F8A99E /* Model */,
+				D527B7392DB6925400F8A99E /* ViewModel */,
+				D527B7382DB6924C00F8A99E /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -124,16 +258,9 @@
 		D5409C2F2DB1D6F800B6FF8E /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				D5409C612DB1D92500B6FF8E /* View */,
+				D5409C2E2DB1D6F800B6FF8E /* LaunchViewController.swift */,
 			);
 			path = Launch;
-			sourceTree = "<group>";
-		};
-		D5409C302DB1D6F800B6FF8E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		D5409C312DB1D6F800B6FF8E /* Onboading */ = {
@@ -146,10 +273,12 @@
 		D5409C322DB1D6F800B6FF8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D5409D262DB4297700B6FF8E /* Common */,
 				D5409C2F2DB1D6F800B6FF8E /* Launch */,
 				D5409C2D2DB1D6F800B6FF8E /* Intro */,
+				D527B6F82DB5CAFE00F8A99E /* NewLogin */,
+				D527B6F92DB5CB1000F8A99E /* OriginLogin */,
 				D5409C2C2DB1D6F800B6FF8E /* Home */,
-				D5409C302DB1D6F800B6FF8E /* Login */,
 				D5409C312DB1D6F800B6FF8E /* Onboading */,
 				D5409C5E2DB1D8C400B6FF8E /* Network */,
 			);
@@ -168,15 +297,15 @@
 			isa = PBXGroup;
 			children = (
 				D5409C352DB1D6F800B6FF8E /* FontLiterals.swift */,
-				D5409C362DB1D6F800B6FF8E /* Pretendard-Black.otf */,
-				D5409C372DB1D6F800B6FF8E /* Pretendard-Bold.otf */,
-				D5409C382DB1D6F800B6FF8E /* Pretendard-ExtraBold.otf */,
-				D5409C392DB1D6F800B6FF8E /* Pretendard-ExtraLight.otf */,
-				D5409C3A2DB1D6F800B6FF8E /* Pretendard-Light.otf */,
-				D5409C3B2DB1D6F800B6FF8E /* Pretendard-Medium.otf */,
-				D5409C3C2DB1D6F800B6FF8E /* Pretendard-Regular.otf */,
-				D5409C3D2DB1D6F800B6FF8E /* Pretendard-SemiBold.otf */,
-				D5409C3E2DB1D6F800B6FF8E /* Pretendard-Thin.otf */,
+				D527B7192DB5E84200F8A99E /* Pretendard-Black.otf */,
+				D527B71A2DB5E84200F8A99E /* Pretendard-Bold.otf */,
+				D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */,
+				D527B71C2DB5E84200F8A99E /* Pretendard-ExtraLight.otf */,
+				D527B71D2DB5E84200F8A99E /* Pretendard-Light.otf */,
+				D527B71E2DB5E84200F8A99E /* Pretendard-Medium.otf */,
+				D527B71F2DB5E84200F8A99E /* Pretendard-Regular.otf */,
+				D527B7202DB5E84200F8A99E /* Pretendard-SemiBold.otf */,
+				D527B7212DB5E84200F8A99E /* Pretendard-Thin.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -204,6 +333,7 @@
 				D5409C442DB1D6F800B6FF8E /* AppDelegate.swift */,
 				D5409C472DB1D6F800B6FF8E /* SceneDelegate.swift */,
 				D5409D242DB41E4D00B6FF8E /* NewLaunchScreen.storyboard */,
+				D527B7002DB5D29A00F8A99E /* GoogleService-Info.plist */,
 				D5409C452DB1D6F800B6FF8E /* Info.plist */,
 				D5409C5C2DB1D87E00B6FF8E /* Global */,
 				D5409C242DB1D6F800B6FF8E /* API */,
@@ -218,7 +348,7 @@
 		D5409C5C2DB1D87E00B6FF8E /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				D5409D262DB4297700B6FF8E /* Common */,
+				D527B7322DB6801D00F8A99E /* Delegate */,
 				D5409C2B2DB1D6F800B6FF8E /* Coordinator */,
 				D5409C252DB1D6F800B6FF8E /* Extensions */,
 			);
@@ -232,17 +362,10 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		D5409C612DB1D92500B6FF8E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D5409C2E2DB1D6F800B6FF8E /* LaunchViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D5409D262DB4297700B6FF8E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D527B72B2DB5EBA500F8A99E /* PaddedTextField.swift */,
 				D5409D272DB429A400B6FF8E /* RadiusSquare.swift */,
 			);
 			path = Common;
@@ -281,6 +404,11 @@
 			);
 			name = iEO;
 			packageProductDependencies = (
+				D527B7032DB5D64E00F8A99E /* FirebaseAnalytics */,
+				D527B7052DB5D64E00F8A99E /* FirebaseAuth */,
+				D527B7072DB5D64E00F8A99E /* FirebaseCore */,
+				D527B7092DB5D64E00F8A99E /* FirebaseFirestore */,
+				D527B70B2DB5D64E00F8A99E /* FirebaseMessaging */,
 			);
 			productName = iEO;
 			productReference = D575014D2DB11280002C1135 /* iEO.app */;
@@ -310,6 +438,9 @@
 			);
 			mainGroup = D57501442DB11280002C1135;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D575014E2DB11280002C1135 /* Products */;
 			projectDirPath = "";
@@ -325,16 +456,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5409C502DB1D6F800B6FF8E /* Pretendard-Black.otf in Resources */,
-				D5409C512DB1D6F800B6FF8E /* Pretendard-Bold.otf in Resources */,
-				D5409C522DB1D6F800B6FF8E /* Pretendard-ExtraBold.otf in Resources */,
 				D5409D252DB41E4D00B6FF8E /* NewLaunchScreen.storyboard in Resources */,
-				D5409C532DB1D6F800B6FF8E /* Pretendard-ExtraLight.otf in Resources */,
-				D5409C542DB1D6F800B6FF8E /* Pretendard-Light.otf in Resources */,
-				D5409C552DB1D6F800B6FF8E /* Pretendard-Medium.otf in Resources */,
-				D5409C562DB1D6F800B6FF8E /* Pretendard-Regular.otf in Resources */,
-				D5409C572DB1D6F800B6FF8E /* Pretendard-SemiBold.otf in Resources */,
-				D5409C582DB1D6F800B6FF8E /* Pretendard-Thin.otf in Resources */,
+				D527B7012DB5D29A00F8A99E /* GoogleService-Info.plist in Resources */,
+				D527B7222DB5E84200F8A99E /* Pretendard-ExtraBold.otf in Resources */,
+				D527B7232DB5E84200F8A99E /* Pretendard-Light.otf in Resources */,
+				D527B7242DB5E84200F8A99E /* Pretendard-Thin.otf in Resources */,
+				D527B7252DB5E84200F8A99E /* Pretendard-Regular.otf in Resources */,
+				D527B7262DB5E84200F8A99E /* Pretendard-Medium.otf in Resources */,
+				D527B7272DB5E84200F8A99E /* Pretendard-ExtraLight.otf in Resources */,
+				D527B7282DB5E84200F8A99E /* Pretendard-Black.otf in Resources */,
+				D527B7292DB5E84200F8A99E /* Pretendard-Bold.otf in Resources */,
+				D527B72A2DB5E84200F8A99E /* Pretendard-SemiBold.otf in Resources */,
 				D5409C592DB1D6F800B6FF8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,13 +480,23 @@
 			files = (
 				D5409C6C2DB1F95700B6FF8E /* IntroViewController.swift in Sources */,
 				D5409C492DB1D6F800B6FF8E /* AppCoordinator.swift in Sources */,
+				D527B72C2DB5EBE700F8A99E /* PaddedTextField.swift in Sources */,
 				D5409C4A2DB1D6F800B6FF8E /* Coordinator.swift in Sources */,
+				D527B7362DB6845300F8A99E /* LoginViewController.swift in Sources */,
 				D5409C4B2DB1D6F800B6FF8E /* LaunchViewController.swift in Sources */,
+				D527B7342DB6806C00F8A99E /* RadiusSqaureDelegate.swift in Sources */,
+				D527B70E2DB5D91800F8A99E /* SignUpAuthViewController.swift in Sources */,
 				D5409D282DB429B900B6FF8E /* RadiusSquare.swift in Sources */,
+				D527B7142DB5DA1E00F8A99E /* SignUpAuthViewModel.swift in Sources */,
 				D5409C4C2DB1D6F800B6FF8E /* ColorLiterals.swift in Sources */,
 				D5409C4D2DB1D6F800B6FF8E /* FontLiterals.swift in Sources */,
+				D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */,
+				D527B7162DB5DA3000F8A99E /* EmailVerificationViewModel.swift in Sources */,
 				D5409C4E2DB1D6F800B6FF8E /* AppDelegate.swift in Sources */,
+				D527B73B2DB6926C00F8A99E /* HomeViewController.swift in Sources */,
+				D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */,
 				D5409C4F2DB1D6F800B6FF8E /* SceneDelegate.swift in Sources */,
+				D527B7102DB5D9A000F8A99E /* EmailVerificationViewController.swift in Sources */,
 				D5409C692DB1F4D600B6FF8E /* UIViewControllerPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +709,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D527B7032DB5D64E00F8A99E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D527B7052DB5D64E00F8A99E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D527B7072DB5D64E00F8A99E /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		D527B7092DB5D64E00F8A99E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D527B70B2DB5D64E00F8A99E /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D527B7022DB5D64E00F8A99E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D57501452DB11280002C1135 /* Project object */;
 }
