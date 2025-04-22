@@ -16,7 +16,6 @@
 		D527B70E2DB5D91800F8A99E /* SignUpAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */; };
 		D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */; };
 		D527B7142DB5DA1E00F8A99E /* SignUpTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7132DB5DA1300F8A99E /* SignUpTimerViewModel.swift */; };
-		D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */; };
 		D527B7222DB5E84200F8A99E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */; };
 		D527B7232DB5E84200F8A99E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B71D2DB5E84200F8A99E /* Pretendard-Light.otf */; };
 		D527B7242DB5E84200F8A99E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D527B7212DB5E84200F8A99E /* Pretendard-Thin.otf */; };
@@ -42,6 +41,7 @@
 		D5409C6C2DB1F95700B6FF8E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C6B2DB1F95700B6FF8E /* IntroViewController.swift */; };
 		D5409D252DB41E4D00B6FF8E /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5409D242DB41E4D00B6FF8E /* NewLaunchScreen.storyboard */; };
 		D5409D282DB429B900B6FF8E /* RadiusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409D272DB429A400B6FF8E /* RadiusSquare.swift */; };
+		D5BA081F2DB7EF88007BC95A /* VerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA081E2DB7EF83007BC95A /* VerifyService.swift */; };
 		D5E8A7AA2DB734C500B95869 /* SignUpAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7A92DB734BB00B95869 /* SignUpAuthViewModel.swift */; };
 		D5E8A7BA2DB73A8F00B95869 /* SignUpVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7B92DB73A7C00B95869 /* SignUpVerifyViewController.swift */; };
 		D5E8A7BC2DB73AFD00B95869 /* SignUpVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7BB2DB73AF300B95869 /* SignUpVerifyViewModel.swift */; };
@@ -60,7 +60,6 @@
 		D527B70D2DB5D90500F8A99E /* SignUpAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewController.swift; sourceTree = "<group>"; };
 		D527B7112DB5D9C100F8A99E /* UserInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewController.swift; sourceTree = "<group>"; };
 		D527B7132DB5DA1300F8A99E /* SignUpTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTimerViewModel.swift; sourceTree = "<group>"; };
-		D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCheckViewModel.swift; sourceTree = "<group>"; };
 		D527B7192DB5E84200F8A99E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		D527B71A2DB5E84200F8A99E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D527B71B2DB5E84200F8A99E /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		D5409D242DB41E4D00B6FF8E /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5409D272DB429A400B6FF8E /* RadiusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusSquare.swift; sourceTree = "<group>"; };
 		D575014D2DB11280002C1135 /* iEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5BA081E2DB7EF83007BC95A /* VerifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyService.swift; sourceTree = "<group>"; };
 		D5E8A7A92DB734BB00B95869 /* SignUpAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthViewModel.swift; sourceTree = "<group>"; };
 		D5E8A7B92DB73A7C00B95869 /* SignUpVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerifyViewController.swift; sourceTree = "<group>"; };
 		D5E8A7BB2DB73AF300B95869 /* SignUpVerifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerifyViewModel.swift; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 				D5E8A7A92DB734BB00B95869 /* SignUpAuthViewModel.swift */,
 				D527B7132DB5DA1300F8A99E /* SignUpTimerViewModel.swift */,
 				D5E8A7BB2DB73AF300B95869 /* SignUpVerifyViewModel.swift */,
-				D527B7172DB5DA3A00F8A99E /* UserInfoCheckViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -437,6 +436,7 @@
 		D5E8A7C82DB7855000B95869 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D5BA081E2DB7EF83007BC95A /* VerifyService.swift */,
 				D5E8A7CD2DB7A20C00B95869 /* AuthService.swift */,
 				D5E8A7C92DB7856100B95869 /* UserService.swift */,
 			);
@@ -566,10 +566,10 @@
 				D527B7122DB5D9E800F8A99E /* UserInfoCheckViewController.swift in Sources */,
 				D5409C4E2DB1D6F800B6FF8E /* AppDelegate.swift in Sources */,
 				D527B73B2DB6926C00F8A99E /* HomeViewController.swift in Sources */,
-				D527B7182DB5DA4700F8A99E /* UserInfoCheckViewModel.swift in Sources */,
 				D5E8A7BC2DB73AFD00B95869 /* SignUpVerifyViewModel.swift in Sources */,
 				D5E8A7C52DB7834800B95869 /* CreatUserRequestDTO.swift in Sources */,
 				D5E8A7CA2DB7856700B95869 /* UserService.swift in Sources */,
+				D5BA081F2DB7EF88007BC95A /* VerifyService.swift in Sources */,
 				D5409C4F2DB1D6F800B6FF8E /* SceneDelegate.swift in Sources */,
 				D5409C692DB1F4D600B6FF8E /* UIViewControllerPreview.swift in Sources */,
 				D5E8A7AA2DB734C500B95869 /* SignUpAuthViewModel.swift in Sources */,

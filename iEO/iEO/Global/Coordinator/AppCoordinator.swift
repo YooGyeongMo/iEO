@@ -74,6 +74,23 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(authVC, animated: true)
         navigationController.setNavigationBarHidden(false, animated: true)
     }
+    
+    func goToVerify() {
+        window.backgroundColor = .accent
+        let verifyVC = SignUpVerifyViewController()
+        verifyVC.coordinator = self
+        navigationController.pushViewController(verifyVC, animated: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
+        
+    }
+    
+    func goToHome() {
+        let homeVC = HomeViewController()
+        homeVC.coordinator = self
+        navigationController.setViewControllers([homeVC], animated: true)
+        navigationController.setNavigationBarHidden(true, animated: false)
+    }
+    
     func popToBack() {
         navigationController.popViewController(animated: true)
     }

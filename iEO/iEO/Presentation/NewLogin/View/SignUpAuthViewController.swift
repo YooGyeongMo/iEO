@@ -157,6 +157,13 @@ class SignUpAuthViewController: UIViewController {
         configureActions()
         setupKeyboardObserver()
         title = "러너 인증"
+        let backItem = UIBarButtonItem()
+        backItem.title = "이전"
+        navigationItem.backBarButtonItem = backItem
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.stop()
     }
     
     
@@ -276,7 +283,6 @@ class SignUpAuthViewController: UIViewController {
         authViewModel.onError = { [weak self] message in
             print("❌ 인증 오류 메시지:", message)
             DispatchQueue.main.async {
-                self?.showInvaildMessage()
                 self?.showErrorToast(message)
             }
         }
@@ -286,21 +292,21 @@ class SignUpAuthViewController: UIViewController {
             
             // 화면 이동 및 userdefault 이메일 저장
             guard let self = self else { return }
-            guard let email = self.emailTextField.text else { return }
+            guard let email = self.emailTextField.text else {
+                self.showErrorToast("이메일 정보가 없습니다.")
+                return
+            }
             
-            // ✅ 이메일 저장
-            UserDefaults.standard.set(email, forKey: "verifiedEmail")
-            
-            // ✅ 화면 이동
-            self.coordinator?.goToVerify()
-            self?.showSuccessToast("인증 완료 🎉")
-            
+            DispatchQueue.main.async {
+                UserStorage.email = email
+                self.coordinator?.goToVerify()
+            }
         }
-        
         // 인증실패
         authViewModel.onVerificationFail = { [weak self] message in
-            self?.showErrorToast(message)
-            self?.ifSendAuthInvaildLabel.isHidden = false
+            DispatchQueue.main.async {
+                self?.showErrorToast(message)
+            }
         }
     }
     
@@ -345,10 +351,6 @@ class SignUpAuthViewController: UIViewController {
         reSendAuthButton.addTarget(self, action: #selector(handleResendButtonTapped), for: .touchUpInside)
     }
     
-    private func showInvaildMessage() {
-        ifSendAuthInvaildLabel.isHidden = false
-    }
-    
     private func setupKeyboardObserver() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -377,17 +379,11 @@ class SignUpAuthViewController: UIViewController {
     }
     
     private func showSuccessToast(_ message: String) {
-        self.view.makeToast("인증 메일 전송 완료 🎉", duration: 2.0, position: .bottom)
+        self.view.makeToast(message, duration: 2.0, position: .center)
     }
     
     private func showErrorToast(_ message: String) {
-        self.view.makeToast("인증 메일 전송 완료 🎉", duration: 2.0, position: .center)
+        self.view.makeToast(message, duration: 2.0, position: .center)
     }
 }
 
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-        SignUpAuthViewController().toPreview()
-    }
-}

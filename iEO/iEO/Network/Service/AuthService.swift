@@ -49,11 +49,25 @@ final class AuthService {
             }
             
             guard let data = docSnapshot?.data(),
-                  let savedCode = data["code"] as? String else {
-                completion(.failure(NSError(domain: "", code: -1, userInfo: [
+                  let savedCode = data["code"] as? String,
+                  let timestamp = data["createdAt"] as? Timestamp else {
+                completion(.failure(NSError(domain: "FireStore/NoAuthCode", code: -1, userInfo: [
                     NSLocalizedDescriptionKey: "저장된 인증 코드가 없습니다."
                 ])))
                 return
+            }
+            
+            let createdDate = timestamp.dateValue()
+            let now = Date()
+            // 지금 시간과 createdDate사이 경과된 시간.
+            let elapsed = now.timeIntervalSince(createdDate)
+            
+            if elapsed > 300 {
+                completion(.failure(NSError(domain: "FireStore/AuthCodeExpired", code: -2, userInfo: [
+                    NSLocalizedDescriptionKey: "인증 코드가 만료되었습니다. 다시 시도하세요."
+                ])))
+                return
+                
             }
 
             completion(.success(savedCode == inputCode))
