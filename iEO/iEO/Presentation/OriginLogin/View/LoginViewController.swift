@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "옳지 않은 인증번호입니다."
         label.font = .mediumLabel
-        label.textColor = .textPrimary
+        label.textColor = .red
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -99,6 +99,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("인증 번호 보내기", for: .normal)
         button.setTitleColor(.accent, for: .normal)
+        button.setTitleColor(.white, for: .highlighted)
         button.isEnabled = false
         button.alpha = 0.3
         button.backgroundColor = .textPrimary
@@ -138,6 +139,8 @@ class LoginViewController: UIViewController {
         view.addSubview(loginNumberTextField)
         view.addSubview(loginButton)
         view.addSubview(reSendLoginButton)
+        view.addSubview(loginInvaildLabel)
+        
         
         NSLayoutConstraint.activate([
             
@@ -173,18 +176,23 @@ class LoginViewController: UIViewController {
             reSendLoginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
             reSendLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            loginInvaildLabel.topAnchor.constraint(equalTo: reSendLoginButton.bottomAnchor, constant:20),
+            loginInvaildLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            
         ])
     }
     
     private func configureInitialHiddenState() {
-        
+        [loginInvaildLabel,loginNumberLabel,loginNumberTextField,reSendLoginButton].forEach {
+            $0.isHidden = true
+        }
     }
     
 }
 
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-        LoginViewController().toPreview()
-    }
-}
+//struct PreView: PreviewProvider {
+//    static var previews: some View {
+//        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
+//        LoginViewController().toPreview()
+//    }
+//}

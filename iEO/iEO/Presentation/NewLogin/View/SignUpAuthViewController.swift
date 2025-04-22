@@ -6,14 +6,16 @@
 //
 
 import UIKit
-
+import Toast
+import SwiftUI
 
 class SignUpAuthViewController: UIViewController {
     
-    //ViewModel 바인딩.
-    weak var coordinator: AppCoordinator?
-    private let viewModel = SignUpAuthViewModel()
     
+    weak var coordinator: AppCoordinator?
+    private let viewModel = SignUpTimerViewModel()
+    private let authViewModel = SignUpAuthViewModel()
+    private var isVerificationSent = false
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -61,7 +63,7 @@ class SignUpAuthViewController: UIViewController {
         let label = UILabel()
         label.text = "옳지 않은 인증번호입니다."
         label.font = .mediumLabel
-        label.textColor = .textPrimary
+        label.textColor = .red
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -252,12 +254,56 @@ class SignUpAuthViewController: UIViewController {
     private func bindViewModel() {
         //1초마다 업데이트
         viewModel.onTimeChanged = { [weak self] formattedTime in
+            self?.ifSendAuthTimeLabel.text = formattedTime
+        }
+        // 보내기 성공시에.
+        authViewModel.onSendSuccess = { [weak self] in
             DispatchQueue.main.async {
-                self?.ifSendAuthTimeLabel.text = formattedTime
+                self?.isVerificationSent = true
+                self?.sendAuthButton.setTitle("인증 번호 확인하기", for: .normal)
+                self?.showSuccessToast("인증 메일이 전송되었습니다.")
+                self?.viewModel.start()
+                
+                [self?.ifSendAuthLabel,
+                 self?.ifSendAuthTimeLabel,
+                 self?.ifSendAuthNumberLabel,
+                 self?.ifSendAuthNumberTextField,
+                 self?.reSendAuthButton
+                ].forEach { $0?.isHidden = false }
+            }
+        }
+        // 보내기 실패시
+        authViewModel.onError = { [weak self] message in
+            print("❌ 인증 오류 메시지:", message)
+            DispatchQueue.main.async {
+                self?.showInvaildMessage()
+                self?.showErrorToast(message)
             }
         }
         
+        // 인증 성공
+        authViewModel.onVerificationSuccess = { [weak self] in
+            
+            // 화면 이동 및 userdefault 이메일 저장
+            guard let self = self else { return }
+            guard let email = self.emailTextField.text else { return }
+            
+            // ✅ 이메일 저장
+            UserDefaults.standard.set(email, forKey: "verifiedEmail")
+            
+            // ✅ 화면 이동
+            self.coordinator?.goToVerify()
+            self?.showSuccessToast("인증 완료 🎉")
+            
+        }
+        
+        // 인증실패
+        authViewModel.onVerificationFail = { [weak self] message in
+            self?.showErrorToast(message)
+            self?.ifSendAuthInvaildLabel.isHidden = false
+        }
     }
+    
     // MARK: - 이메일 텍스트 필드 바뀔 때 마다
     @objc private func emailTextFieldChanged() {
         let email = emailTextField.text ?? ""
@@ -268,17 +314,28 @@ class SignUpAuthViewController: UIViewController {
     
     // MARK: - 이메일 확인 버튼
     @objc private func handleSendAuthButtonTapped() {
-        //타이머 시작
-        viewModel.start()
-        sendAuthButton.setTitle("인증 번호 확인하기", for: .normal)
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showErrorToast("이메일을 입력해주세요.")
+            return
+        }
         
-        [ifSendAuthLabel, ifSendAuthTimeLabel, ifSendAuthNumberLabel, ifSendAuthNumberTextField, reSendAuthButton].forEach {
-            $0.isHidden = false
+        if isVerificationSent {
+            guard let code = ifSendAuthNumberTextField.text, !code.isEmpty else {
+                showErrorToast("인증번호를 입력해주세요.")
+                return
+            }
+            authViewModel.verifyAuthCode(email: email, inputCode: code)
+        } else {
+            // ✉️ 인증번호 보내기
+            authViewModel.sendAuthCode(to: email)
         }
     }
+    
     // MARK: - 이메일 확인 새로 보내기
     @objc private func handleResendButtonTapped() {
         viewModel.reset()
+        isVerificationSent = false
+        handleSendAuthButtonTapped() // 다시 보내기
     }
     
     // MARK: - 버튼 이벤트
@@ -319,4 +376,18 @@ class SignUpAuthViewController: UIViewController {
         view.endEditing(true)
     }
     
+    private func showSuccessToast(_ message: String) {
+        self.view.makeToast("인증 메일 전송 완료 🎉", duration: 2.0, position: .bottom)
+    }
+    
+    private func showErrorToast(_ message: String) {
+        self.view.makeToast("인증 메일 전송 완료 🎉", duration: 2.0, position: .center)
+    }
+}
+
+struct PreView: PreviewProvider {
+    static var previews: some View {
+        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
+        SignUpAuthViewController().toPreview()
+    }
 }
