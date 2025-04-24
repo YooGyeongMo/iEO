@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import Toast
 
 class SignUpVerifyViewController: UIViewController {
@@ -142,7 +141,7 @@ class SignUpVerifyViewController: UIViewController {
         sendVerifyButton.addTarget(self, action: #selector(handleVerifyTapped), for: .touchUpInside)
         // ViewModel 콜백 바인딩
         viewModel.onSuccess = { [weak self] in
-            self?.coordinator?.goToHome()
+            self?.coordinator?.goToLoading()
         }
         
         viewModel.onFailure = { [weak self] message in
@@ -196,12 +195,4 @@ class SignUpVerifyViewController: UIViewController {
     }
     
     
-}
-
-
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-        SignUpVerifyViewController().toPreview()
-    }
 }

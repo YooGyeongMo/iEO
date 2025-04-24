@@ -32,7 +32,11 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showLaunch()
+        if UserStorage.isLoggedIn {
+            goToHome()
+        } else {
+            showLaunch()
+        }
         window.rootViewController = navigationController
     }
     
@@ -84,11 +88,27 @@ class AppCoordinator: Coordinator {
         
     }
     
-    func goToHome() {
-        let homeVC = HomeViewController()
-        homeVC.coordinator = self
-        navigationController.setViewControllers([homeVC], animated: true)
+    func goToLoading() {
+        let loadingVC = LoadingViewController()
+        loadingVC.coordinator = self
+        // 🎯 전환 애니메이션 추가
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        transition.type = .push
+        transition.subtype = .fromRight
+        
+        navigationController.view.layer.add(transition, forKey: kCATransition)
+        
+        // 🎯 루트 교체는 그대로
+        navigationController.setViewControllers([loadingVC], animated: false)
         navigationController.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func goToHome() {
+        let homecoordinator = HomeCoordinator(navigationController: navigationController)
+        childCoordinators.append(homecoordinator)
+        homecoordinator.start()
     }
     
     func popToBack() {

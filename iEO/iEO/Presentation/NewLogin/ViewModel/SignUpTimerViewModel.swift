@@ -18,7 +18,7 @@ final class SignUpTimerViewModel{
     
     //타이머 시작했을수도 안했을 수도 그래서 옵셔널 타입
     private var timer: Timer?
-    
+        
     //private(set) 외부에서는 읽기는 가능하고 해당 뷰모델에서만 객체 접근가능하게.
     private(set) var remainingTime: Int = 300 // 5분
     

@@ -7,11 +7,15 @@
 
 
 import UIKit
-import SwiftUI
+import Toast
+
 
 class LoginViewController: UIViewController {
     
     weak var coordinator: AppCoordinator?
+    
+    private var verificationSent = false
+    private let viewModel = LoginViewModel()
     
     private let loginLogoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "loginLogo"))
@@ -26,16 +30,6 @@ class LoginViewController: UIViewController {
         label.text = "아카데미 이메일로 로그인해 주세요."
         label.font = .mediumLabel
         label.textColor = .appBackground
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let loginInvaildLabel: UILabel = {
-        let label = UILabel()
-        label.text = "옳지 않은 인증번호입니다."
-        label.font = .mediumLabel
-        label.textColor = .red
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -125,8 +119,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUpViews()
         configureInitialHiddenState()
+        bindViewModel()
+        configureActions()
         title = "기존 러너 로그인"
-        
     }
     
     private func setUpViews() {
@@ -139,7 +134,6 @@ class LoginViewController: UIViewController {
         view.addSubview(loginNumberTextField)
         view.addSubview(loginButton)
         view.addSubview(reSendLoginButton)
-        view.addSubview(loginInvaildLabel)
         
         
         NSLayoutConstraint.activate([
@@ -176,23 +170,80 @@ class LoginViewController: UIViewController {
             reSendLoginButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
             reSendLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            loginInvaildLabel.topAnchor.constraint(equalTo: reSendLoginButton.bottomAnchor, constant:20),
-            loginInvaildLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
     }
     
     private func configureInitialHiddenState() {
-        [loginInvaildLabel,loginNumberLabel,loginNumberTextField,reSendLoginButton].forEach {
+        [loginNumberLabel,loginNumberTextField,reSendLoginButton].forEach {
             $0.isHidden = true
         }
     }
     
+    private func bindViewModel() {
+        viewModel.onSendSuccess = { [weak self] in
+            DispatchQueue.main.async {
+                self?.loginButton.setTitle("인증번호 확인하기", for: .normal)
+                self?.reSendLoginButton.isHidden = false
+                self?.loginNumberLabel.isHidden = false
+                self?.loginNumberTextField.isHidden = false
+                self?.verificationSent = true
+                self?.showToast(LoginMessage.codeSent)
+            }
+        }
+        
+        viewModel.onVerifySuccess = { [weak self] in
+            DispatchQueue.main.async {
+                self?.coordinator?.goToLoading()
+            }
+        }
+        
+        viewModel.onFailure = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.showToast(message)
+            }
+        }
+    }
+    
+    private func configureActions() {
+        loginEmailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        reSendLoginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func loginButtonTapped() {
+        guard let email = loginEmailTextField.text, !email.isEmpty else {
+            showToast(LoginMessage.emptyEmail)
+            return
+        }
+        
+        if verificationSent {
+            guard let code = loginNumberTextField.text, !code.isEmpty else {
+                showToast(LoginMessage.invalidCode)
+                return
+            }
+            viewModel.verifyCode(email: email, code: code)
+        } else {
+            viewModel.sendCode(to: email)
+        }
+    }
+    
+    @objc private func emailTextFieldChanged() {
+        let email = loginEmailTextField.text ?? ""
+        let isValid = viewModel.isValidAcademyEmail(email)
+        loginButton.isEnabled = isValid
+        loginButton.alpha = isValid ? 1.0 : 0.3
+    }
+    
+    private func showToast(_ message: String) {
+        view.makeToast(message, duration: 2.0, position: .center)
+    }
 }
 
-//struct PreView: PreviewProvider {
-//    static var previews: some View {
-//        // Preview를 보고자 하는 ViewController를 넣으면 됩니다.
-//        LoginViewController().toPreview()
-//    }
-//}
+// MARK: - 메시지 정의
+
+enum LoginMessage {
+    static let emptyEmail = NSLocalizedString("이메일을 입력해주세요", comment: "Empty email warning")
+    static let invalidCode = NSLocalizedString("인증번호 입력해주세요.", comment: "Empty code warning")
+    static let codeSent = NSLocalizedString("인증번호 보냈어요 🎉", comment: "Code sent success")
+}

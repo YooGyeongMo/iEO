@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class SignUpVerifyViewModel {
     
@@ -20,7 +21,7 @@ class SignUpVerifyViewModel {
             switch result {
             case .success:
                 self?.onSuccess?()
-            case .failure(let error):
+            case .failure(let error): // ✅ 이 부분은 switch 안에 있어야 함
                 self?.onFailure?(error.localizedDescription)
             }
         }
