@@ -4,30 +4,33 @@
 //
 //  Created by Demian Yoo on 4/22/25.
 //
+import FirebaseFirestore
+import FirebaseFunctions
 
-class SignUpAuthViewModel {
-    let authService = AuthService()
-    
+
+// MARK: - ViewModel
+
+final class SignUpAuthViewModel {
     var onSendSuccess: (() -> Void)?
     var onError: ((String) -> Void)?
-    
     var onVerificationSuccess: (() -> Void)?
     var onVerificationFail: ((String) -> Void)?
-    
-    // sendAuthCode 확인 로직
+
+    private let service = SignUpAuthService()
+
     func sendAuthCode(to email: String) {
-        authService.requestAuthCode(for: email) { [weak self] result in
+        service.requestAuthCode(for: email) { [weak self] result in
             switch result {
-            case .success():
+            case .success:
                 self?.onSendSuccess?()
             case .failure(let error):
                 self?.onError?(error.localizedDescription)
             }
         }
     }
-    // verifyAuthCode 확인 로직
+
     func verifyAuthCode(email: String, inputCode: String) {
-        authService.verifyAuthCode(email: email, inputCode: inputCode) { [weak self] result in
+        service.verifyAuthCode(email: email, inputCode: inputCode) { [weak self] result in
             switch result {
             case .success(true):
                 self?.onVerificationSuccess?()

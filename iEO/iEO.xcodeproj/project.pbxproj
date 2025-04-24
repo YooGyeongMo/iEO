@@ -40,9 +40,13 @@
 		D5409C6C2DB1F95700B6FF8E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409C6B2DB1F95700B6FF8E /* IntroViewController.swift */; };
 		D5409D252DB41E4D00B6FF8E /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5409D242DB41E4D00B6FF8E /* NewLaunchScreen.storyboard */; };
 		D5409D282DB429B900B6FF8E /* RadiusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5409D272DB429A400B6FF8E /* RadiusSquare.swift */; };
-		D5BA081F2DB7EF88007BC95A /* VerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA081E2DB7EF83007BC95A /* VerifyService.swift */; };
+		D5A5E3B02DBA264600C908EE /* SignUpAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3AF2DBA263A00C908EE /* SignUpAuthModel.swift */; };
+		D5A5E3B22DBA26B800C908EE /* SignUpAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3B12DBA26A900C908EE /* SignUpAuthService.swift */; };
+		D5A5E3B42DBA276F00C908EE /* SingUpVerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3B32DBA276700C908EE /* SingUpVerifyModel.swift */; };
+		D5A5E3B62DBA284900C908EE /* SignUpVerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3B52DBA284300C908EE /* SignUpVerifyService.swift */; };
+		D5A5E3BB2DBA296700C908EE /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3BA2DBA296100C908EE /* LoginModel.swift */; };
+		D5A5E3BF2DBA299700C908EE /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A5E3BE2DBA298E00C908EE /* LoginService.swift */; };
 		D5BA08222DB93D52007BC95A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA08212DB93D4E007BC95A /* LoginViewModel.swift */; };
-		D5BA08242DB93E56007BC95A /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA08232DB93E53007BC95A /* LoginService.swift */; };
 		D5BA08262DB9466A007BC95A /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA08252DB94662007BC95A /* HomeCoordinator.swift */; };
 		D5BA082A2DB9487F007BC95A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA08292DB94878007BC95A /* LoadingViewController.swift */; };
 		D5BA082D2DB94A78007BC95A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D5BA082C2DB94A78007BC95A /* Lottie */; };
@@ -51,10 +55,7 @@
 		D5E8A7BA2DB73A8F00B95869 /* SignUpVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7B92DB73A7C00B95869 /* SignUpVerifyViewController.swift */; };
 		D5E8A7BC2DB73AFD00B95869 /* SignUpVerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7BB2DB73AF300B95869 /* SignUpVerifyViewModel.swift */; };
 		D5E8A7C32DB7479B00B95869 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7C22DB7479600B95869 /* UserModel.swift */; };
-		D5E8A7C52DB7834800B95869 /* CreatUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7C42DB7833900B95869 /* CreatUserRequestDTO.swift */; };
-		D5E8A7CA2DB7856700B95869 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7C92DB7856100B95869 /* UserService.swift */; };
 		D5E8A7CC2DB7A14C00B95869 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = D5E8A7CB2DB7A14C00B95869 /* FirebaseFunctions */; };
-		D5E8A7CE2DB7A21100B95869 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7CD2DB7A20C00B95869 /* AuthService.swift */; };
 		D5E8A7D12DB7AC3A00B95869 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D5E8A7D02DB7AC3A00B95869 /* Toast */; };
 		D5E8A7D62DB7BAAB00B95869 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7D52DB7BAA100B95869 /* UserDefaultWrapper.swift */; };
 		D5E8A7D82DB7BAEF00B95869 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8A7D72DB7BAE000B95869 /* UserStorage.swift */; };
@@ -91,9 +92,13 @@
 		D5409D242DB41E4D00B6FF8E /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5409D272DB429A400B6FF8E /* RadiusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusSquare.swift; sourceTree = "<group>"; };
 		D575014D2DB11280002C1135 /* iEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5BA081E2DB7EF83007BC95A /* VerifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyService.swift; sourceTree = "<group>"; };
+		D5A5E3AF2DBA263A00C908EE /* SignUpAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthModel.swift; sourceTree = "<group>"; };
+		D5A5E3B12DBA26A900C908EE /* SignUpAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthService.swift; sourceTree = "<group>"; };
+		D5A5E3B32DBA276700C908EE /* SingUpVerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVerifyModel.swift; sourceTree = "<group>"; };
+		D5A5E3B52DBA284300C908EE /* SignUpVerifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerifyService.swift; sourceTree = "<group>"; };
+		D5A5E3BA2DBA296100C908EE /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D5A5E3BE2DBA298E00C908EE /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		D5BA08212DB93D4E007BC95A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		D5BA08232DB93E53007BC95A /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		D5BA08252DB94662007BC95A /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D5BA08292DB94878007BC95A /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D5BA08332DB94C22007BC95A /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -101,9 +106,6 @@
 		D5E8A7B92DB73A7C00B95869 /* SignUpVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerifyViewController.swift; sourceTree = "<group>"; };
 		D5E8A7BB2DB73AF300B95869 /* SignUpVerifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerifyViewModel.swift; sourceTree = "<group>"; };
 		D5E8A7C22DB7479600B95869 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		D5E8A7C42DB7833900B95869 /* CreatUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatUserRequestDTO.swift; sourceTree = "<group>"; };
-		D5E8A7C92DB7856100B95869 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		D5E8A7CD2DB7A20C00B95869 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D5E8A7D52DB7BAA100B95869 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		D5E8A7D72DB7BAE000B95869 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,8 +132,10 @@
 		D527B6F82DB5CAFE00F8A99E /* NewLogin */ = {
 			isa = PBXGroup;
 			children = (
+				D5A5E3AD2DBA25D600C908EE /* Model */,
 				D527B6FB2DB5CB2800F8A99E /* View */,
 				D527B6FC2DB5CB2C00F8A99E /* ViewModel */,
+				D5A5E3AE2DBA25DD00C908EE /* Service */,
 			);
 			path = NewLogin;
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 				D527B72D2DB67FA800F8A99E /* Model */,
 				D527B7302DB67FBA00F8A99E /* View */,
 				D527B7312DB67FC300F8A99E /* ViewModel */,
+				D5A5E3BC2DBA297A00C908EE /* Service */,
 			);
 			path = OriginLogin;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		D527B72D2DB67FA800F8A99E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D5A5E3BA2DBA296100C908EE /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,34 +224,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D5409C242DB1D6F800B6FF8E /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		D5409C252DB1D6F800B6FF8E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D5409C682DB1F4CA00B6FF8E /* UIViewControllerPreview.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D5409C262DB1D6F800B6FF8E /* Wrapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Wrapper;
-			sourceTree = "<group>";
-		};
-		D5409C272DB1D6F800B6FF8E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				D5409C262DB1D6F800B6FF8E /* Wrapper */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		D5409C2B2DB1D6F800B6FF8E /* Coordinator */ = {
@@ -334,13 +318,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D5409C422DB1D6F800B6FF8E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		D5409C482DB1D6F800B6FF8E /* iEO */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,12 +327,8 @@
 				D527B7002DB5D29A00F8A99E /* GoogleService-Info.plist */,
 				D5409C452DB1D6F800B6FF8E /* Info.plist */,
 				D5409C5C2DB1D87E00B6FF8E /* Global */,
-				D5409C242DB1D6F800B6FF8E /* API */,
-				D5409C272DB1D6F800B6FF8E /* Core */,
 				D5409C322DB1D6F800B6FF8E /* Presentation */,
 				D5409C412DB1D6F800B6FF8E /* Resources */,
-				D5409C5E2DB1D8C400B6FF8E /* Network */,
-				D5409C422DB1D6F800B6FF8E /* Utils */,
 			);
 			path = iEO;
 			sourceTree = "<group>";
@@ -369,16 +342,6 @@
 				D5409C252DB1D6F800B6FF8E /* Extensions */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		D5409C5E2DB1D8C400B6FF8E /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				D5E8A7C62DB7851C00B95869 /* Request */,
-				D5E8A7C72DB7852500B95869 /* Response */,
-				D5E8A7C82DB7855000B95869 /* Service */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		D5409D262DB4297700B6FF8E /* Common */ = {
@@ -404,6 +367,32 @@
 				D575014D2DB11280002C1135 /* iEO.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D5A5E3AD2DBA25D600C908EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5E3AF2DBA263A00C908EE /* SignUpAuthModel.swift */,
+				D5A5E3B32DBA276700C908EE /* SingUpVerifyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5A5E3AE2DBA25DD00C908EE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5E3B12DBA26A900C908EE /* SignUpAuthService.swift */,
+				D5A5E3B52DBA284300C908EE /* SignUpVerifyService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D5A5E3BC2DBA297A00C908EE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5E3BE2DBA298E00C908EE /* LoginService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D5BA08282DB9479D007BC95A /* Loading */ = {
@@ -437,32 +426,6 @@
 				D5E8A7C22DB7479600B95869 /* UserModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		D5E8A7C62DB7851C00B95869 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				D5E8A7C42DB7833900B95869 /* CreatUserRequestDTO.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		D5E8A7C72DB7852500B95869 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		D5E8A7C82DB7855000B95869 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				D5BA08232DB93E53007BC95A /* LoginService.swift */,
-				D5BA081E2DB7EF83007BC95A /* VerifyService.swift */,
-				D5E8A7CD2DB7A20C00B95869 /* AuthService.swift */,
-				D5E8A7C92DB7856100B95869 /* UserService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		D5E8A7D42DB7BA9600B95869 /* Common */ = {
@@ -575,14 +538,16 @@
 				D5409C492DB1D6F800B6FF8E /* AppCoordinator.swift in Sources */,
 				D527B72C2DB5EBE700F8A99E /* PaddedTextField.swift in Sources */,
 				D5409C4A2DB1D6F800B6FF8E /* Coordinator.swift in Sources */,
+				D5A5E3B62DBA284900C908EE /* SignUpVerifyService.swift in Sources */,
 				D5BA08262DB9466A007BC95A /* HomeCoordinator.swift in Sources */,
 				D5E8A7D62DB7BAAB00B95869 /* UserDefaultWrapper.swift in Sources */,
+				D5A5E3B42DBA276F00C908EE /* SingUpVerifyModel.swift in Sources */,
 				D5E8A7D82DB7BAEF00B95869 /* UserStorage.swift in Sources */,
+				D5A5E3BF2DBA299700C908EE /* LoginService.swift in Sources */,
 				D527B7362DB6845300F8A99E /* LoginViewController.swift in Sources */,
 				D5409C4B2DB1D6F800B6FF8E /* LaunchViewController.swift in Sources */,
 				D5BA08222DB93D52007BC95A /* LoginViewModel.swift in Sources */,
 				D527B7342DB6806C00F8A99E /* RadiusSqaureDelegate.swift in Sources */,
-				D5E8A7CE2DB7A21100B95869 /* AuthService.swift in Sources */,
 				D527B70E2DB5D91800F8A99E /* SignUpAuthViewController.swift in Sources */,
 				D5E8A7BA2DB73A8F00B95869 /* SignUpVerifyViewController.swift in Sources */,
 				D5409D282DB429B900B6FF8E /* RadiusSquare.swift in Sources */,
@@ -594,13 +559,12 @@
 				D5409C4E2DB1D6F800B6FF8E /* AppDelegate.swift in Sources */,
 				D527B73B2DB6926C00F8A99E /* HomeViewController.swift in Sources */,
 				D5E8A7BC2DB73AFD00B95869 /* SignUpVerifyViewModel.swift in Sources */,
-				D5E8A7C52DB7834800B95869 /* CreatUserRequestDTO.swift in Sources */,
-				D5E8A7CA2DB7856700B95869 /* UserService.swift in Sources */,
-				D5BA081F2DB7EF88007BC95A /* VerifyService.swift in Sources */,
 				D5409C4F2DB1D6F800B6FF8E /* SceneDelegate.swift in Sources */,
+				D5A5E3BB2DBA296700C908EE /* LoginModel.swift in Sources */,
+				D5A5E3B02DBA264600C908EE /* SignUpAuthModel.swift in Sources */,
 				D5409C692DB1F4D600B6FF8E /* UIViewControllerPreview.swift in Sources */,
 				D5E8A7AA2DB734C500B95869 /* SignUpAuthViewModel.swift in Sources */,
-				D5BA08242DB93E56007BC95A /* LoginService.swift in Sources */,
+				D5A5E3B22DBA26B800C908EE /* SignUpAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

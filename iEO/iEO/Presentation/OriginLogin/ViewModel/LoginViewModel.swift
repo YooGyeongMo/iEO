@@ -1,18 +1,14 @@
-//
-//  LoginViewModel.swift
-//  iEO
-//
-//  Created by Demian Yoo on 4/24/25.
-//
+// MARK: - ViewModel
+
 import Foundation
 
 final class LoginViewModel {
     private let service = LoginService()
-
+    
     var onSendSuccess: (() -> Void)?
     var onVerifySuccess: (() -> Void)?
     var onFailure: ((String) -> Void)?
-
+    
     func sendCode(to email: String) {
         service.sendAuthCode(to: email) { [weak self] result in
             switch result {
@@ -23,7 +19,7 @@ final class LoginViewModel {
             }
         }
     }
-
+    
     func verifyCode(email: String, code: String) {
         service.verifyAuthCode(email: email, inputCode: code) { [weak self] result in
             switch result {

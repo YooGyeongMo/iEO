@@ -31,6 +31,6 @@ class HomeCoordinator: Coordinator {
         
         // 🎯 루트 교체는 그대로
         navigationController.setViewControllers([homeVC], animated: false)
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.setNavigationBarHidden(false, animated: false)
     }
 }

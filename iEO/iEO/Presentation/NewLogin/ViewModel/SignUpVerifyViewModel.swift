@@ -8,20 +8,19 @@
 import Foundation
 import Firebase
 
-class SignUpVerifyViewModel {
-    
-    private let service = VerifyService()
-    
+final class SignUpVerifyViewModel {
+    private let service = SignUpVerifyService()
+
     var onSuccess: (() -> Void)?
     var onFailure: ((String) -> Void)?
-    
+
     func submitNickname(_ nickname: String) {
         let formatted = nickname.prefix(1).uppercased() + nickname.dropFirst().lowercased()
         service.checkNicknameAndRegister(byNickname: formatted) { [weak self] result in
             switch result {
             case .success:
                 self?.onSuccess?()
-            case .failure(let error): // ✅ 이 부분은 switch 안에 있어야 함
+            case .failure(let error):
                 self?.onFailure?(error.localizedDescription)
             }
         }

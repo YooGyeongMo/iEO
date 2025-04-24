@@ -1,13 +1,13 @@
 //
-//  VerifyService.swift
+//  SignUpVerifyService.swift
 //  iEO
 //
-//  Created by Demian Yoo on 4/23/25.
+//  Created by Demian Yoo on 4/24/25.
 //
 
 import FirebaseFirestore
 
-final class VerifyService {
+final class SignUpVerifyService {
     private let db = Firestore.firestore()
     
     func checkNicknameAndRegister(byNickname nickname: String, completion: @escaping (Result<Void, Error>) -> Void) {
@@ -19,15 +19,12 @@ final class VerifyService {
                 return
             }
             
-            guard let document = snapshot?.documents.first else {
-                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "존재하지 않는 닉네임입니다."])))
-                return
-            }
-            
-            let data = document.data()
-            let isAlreadyVerified = data["verified"] as? Bool ?? false
-            if isAlreadyVerified {
-                completion(.failure(NSError(domain: "", code: 409, userInfo: [NSLocalizedDescriptionKey: "이미 인증된 닉네임입니다."])))
+            guard let document = snapshot?.documents.first,
+                  let user = NicknameUser.from(snapshot: document),
+                  !user.verified else {
+                completion(.failure(NSError(domain: "", code: 409, userInfo: [
+                    NSLocalizedDescriptionKey: "이미 인증된 닉네임입니다."
+                ])))
                 return
             }
             
@@ -47,7 +44,6 @@ final class VerifyService {
                     return
                 }
                 
-                // ✅ 로컬 저장
                 UserStorage.uid = document.documentID
                 UserStorage.nickname = nickname
                 UserStorage.verified = true
